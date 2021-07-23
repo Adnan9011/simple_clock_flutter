@@ -99,8 +99,8 @@ class ClockPainter extends CustomPainter {
     );
 
     Offset hourStartOffset = Offset(
-        centerX - outerRadius * .4 * cos(dateTime.hour * 6 * pi / 180),
-        centerX - outerRadius * .4 * sin(dateTime.hour * 6 * pi / 180)
+        centerX - outerRadius * .4 * cos((dateTime.hour%12 + dateTime.minute/60) * 5 * 6 * pi / 180),
+        centerX - outerRadius * .4 * sin((dateTime.hour%12 + dateTime.minute/60) * 5 * 6 * pi / 180)
     );
     Offset hourEndOffset = Offset(
         centerX + cos(dateTime.hour * 6 * pi / 180),
